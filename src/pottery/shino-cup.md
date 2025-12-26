@@ -3,7 +3,7 @@ title: Shino Cup
 images:
   - /images/uploads/shino_cup1.png
   - /images/uploads/shino_cup2.png
-price: 18000
+price: 10000
 status: available
 category: Mug
 height: 3.5
