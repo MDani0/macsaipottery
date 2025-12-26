@@ -1,0 +1,5 @@
+{
+  "layout": "pottery-item.njk",
+  "tags": "pottery",
+  "permalink": "/pottery/{{ page.fileSlug }}/"
+}

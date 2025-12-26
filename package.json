@@ -1,0 +1,17 @@
+{
+  "name": "laca-honlap",
+  "version": "1.0.0",
+  "description": "A beautiful portfolio website for a potter featuring galleries and CMS",
+  "scripts": {
+    "start": "eleventy --serve",
+    "dev": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "keywords": ["pottery", "portfolio", "eleventy", "decap-cms"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {}
+}

@@ -1,0 +1,60 @@
+---
+layout: base.njk
+title: Available Pieces
+permalink: /available/
+---
+
+<section class="gallery-header">
+  <div class="container">
+    <h1 data-i18n="gallery.availableTitle">Available Pieces</h1>
+    <p class="subtitle" data-i18n="gallery.availableSubtitle">Unique, handcrafted pottery pieces available for purchase</p>
+  </div>
+</section>
+
+<section class="gallery-filters">
+  <div class="container">
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filterAll">All</button>
+      <button class="filter-btn" data-filter="Bowl" data-i18n="gallery.filterBowls">Bowls</button>
+      <button class="filter-btn" data-filter="Vase" data-i18n="gallery.filterVases">Vases</button>
+      <button class="filter-btn" data-filter="Mug" data-i18n="gallery.filterMugs">Mugs</button>
+      <button class="filter-btn" data-filter="Plate" data-i18n="gallery.filterPlates">Plates</button>
+      <button class="filter-btn" data-filter="Sculpture" data-i18n="gallery.filterSculptures">Sculptures</button>
+      <button class="filter-btn" data-filter="Bonsai Pot" data-i18n="gallery.filterBonsaiPots">Bonsai Pots</button>
+      <button class="filter-btn" data-filter="Other" data-i18n="gallery.filterOther">Other</button>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-content">
+  <div class="container">
+    {% set availableItems = collections.pottery | available %}
+    {% if availableItems.length > 0 %}
+      <div class="pottery-grid" id="potteryGrid">
+        {% for item in availableItems %}
+          <article class="pottery-card" data-category="{{ item.data.category }}">
+            <a href="/pottery/{{ item.fileSlug }}/">
+              <div class="pottery-image-container">
+                {% if item.data.images and item.data.images.length > 0 %}
+                  <img src="{{ item.data.images[0] }}" alt="{{ item.data.title }}" class="pottery-image" loading="lazy">
+                {% else %}
+                  <div class="pottery-image-placeholder"></div>
+                {% endif %}
+                <span class="status-overlay available" data-i18n="pottery.available">Available</span>
+              </div>
+              <div class="pottery-info">
+                <h3 class="pottery-title">{{ item.data.title }}</h3>
+                <p class="pottery-category">{{ item.data.category }}</p>
+                <p class="pottery-price">{{ item.data.price | currency }}</p>
+              </div>
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="empty-state">
+        <p>No pieces are currently available. Please check back soon or <a href="/contact/">contact us</a> for upcoming pieces.</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

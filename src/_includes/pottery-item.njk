@@ -1,0 +1,78 @@
+---
+layout: base.njk
+---
+
+<article class="pottery-detail">
+  <div class="container">
+    <div class="pottery-detail-grid">
+      <div class="pottery-images">
+        <div class="main-image-container">
+          {% if images and images.length > 0 %}
+            <img src="{{ images[0] }}" alt="{{ title }}" class="main-image" id="mainImage">
+          {% endif %}
+        </div>
+        {% if images and images.length > 1 %}
+          <div class="thumbnail-gallery">
+            {% for image in images %}
+              <button class="thumbnail {% if loop.index0 == 0 %}active{% endif %}" onclick="changeImage('{{ image }}', this)">
+                <img src="{{ image }}" alt="{{ title }} - view {{ loop.index }}">
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="pottery-details">
+        <h1>{{ title }}</h1>
+
+        {% if status == "sold" %}
+          <span class="status-badge sold">SOLD</span>
+        {% else %}
+          <span class="status-badge available">AVAILABLE</span>
+        {% endif %}
+
+        <p class="category-tag">{{ category }}</p>
+
+        <p class="price">{{ price | currency }}</p>
+
+        <div class="description">
+          {{ description | safe }}
+        </div>
+
+        <div class="specifications">
+          <h3>Specifications</h3>
+          <ul>
+            {% if height %}
+              <li><strong>Height:</strong> {{ height }}"</li>
+            {% endif %}
+            {% if diameter %}
+              <li><strong>Diameter:</strong> {{ diameter }}"</li>
+            {% endif %}
+            {% if width %}
+              <li><strong>Width:</strong> {{ width }}"</li>
+            {% endif %}
+            {% if materials %}
+              <li><strong>Materials:</strong> {{ materials }}</li>
+            {% endif %}
+            {% if technique %}
+              <li><strong>Technique:</strong> {{ technique }}</li>
+            {% endif %}
+            {% if year %}
+              <li><strong>Year:</strong> {{ year }}</li>
+            {% endif %}
+          </ul>
+        </div>
+
+        {% if status == "available" %}
+          <a href="/contact/?item={{ title | urlencode }}" class="btn btn-primary btn-large">Inquire About This Piece</a>
+        {% else %}
+          <p class="sold-notice">This piece has been sold and is no longer available.</p>
+        {% endif %}
+
+        <div class="navigation-links">
+          <a href="/available/" class="back-link">← Back to Gallery</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>

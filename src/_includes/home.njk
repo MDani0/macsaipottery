@@ -1,0 +1,56 @@
+---
+layout: base.njk
+---
+
+<section class="hero">
+  <div class="hero-image-container">
+    <img src="{{ hero_image }}" alt="Mácsai Pottery" class="hero-image">
+    <div class="hero-overlay"></div>
+  </div>
+  <div class="hero-content">
+    <h1 class="hero-title" data-i18n="home.heroTitle">Mácsai Pottery</h1>
+    <p class="hero-subtitle" data-i18n="home.heroSubtitle">Bonsai pots, kitchenwares, and decorative ceramics from Hungary</p>
+    <a href="/available/" class="btn btn-primary" data-i18n="nav.available">Available Pieces</a>
+  </div>
+</section>
+
+<section class="intro-section">
+  <div class="container">
+    <div data-i18n-html="home.intro">
+      Welcome to the studio of László Mácsai, where each piece is thoughtfully crafted by hand using traditional firing techniques. Every item is unique, showcasing the unpredictable beauty of wood-salt and reduction firing.
+    </div>
+    <div data-i18n-html="home.intro2">
+      From functional kitchenwares to specialized bonsai pots and decorative pieces, each work celebrates the natural variations that make handmade ceramics truly one-of-a-kind.
+    </div>
+  </div>
+</section>
+
+<section class="featured-pieces">
+  <div class="container">
+    <h2 class="section-title" data-i18n="home.featuredTitle">Featured Pieces</h2>
+    <div class="pottery-grid">
+      {% set featuredItems = collections.pottery | available | featured %}
+      {% for item in featuredItems %}
+        <article class="pottery-card">
+          <a href="/pottery/{{ item.fileSlug }}/">
+            <div class="pottery-image-container">
+              {% if item.data.images and item.data.images.length > 0 %}
+                <img src="{{ item.data.images[0] }}" alt="{{ item.data.title }}" class="pottery-image">
+              {% else %}
+                <div class="pottery-image-placeholder"></div>
+              {% endif %}
+            </div>
+            <div class="pottery-info">
+              <h3 class="pottery-title">{{ item.data.title }}</h3>
+              <p class="pottery-category">{{ item.data.category }}</p>
+              <p class="pottery-price">{{ item.data.price | currency }}</p>
+            </div>
+          </a>
+        </article>
+      {% endfor %}
+    </div>
+    <div class="text-center">
+      <a href="/available/" class="btn btn-secondary" data-i18n="home.viewAll">See All Available Pieces</a>
+    </div>
+  </div>
+</section>

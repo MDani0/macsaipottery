@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if title %}{{ title }} - {% endif %}Mácsai Pottery</title>
+  <meta name="description" content="Handcrafted pottery by László Mácsai - bonsai pots, kitchenwares, and decorative ceramics from Hungary">
+  <link rel="stylesheet" href="/css/style.css">
+  <script>
+    window.translations = {{ translations | dump | safe }};
+  </script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav-container">
+      <a href="/" class="logo">Mácsai Pottery</a>
+      <ul class="nav-menu">
+        <li><a href="/" data-i18n="nav.home">Home</a></li>
+        <li><a href="/available/" data-i18n="nav.available">Available Pieces</a></li>
+        <li><a href="/past-work/" data-i18n="nav.pastWork">Past Work</a></li>
+        <li><a href="/about/" data-i18n="nav.about">About</a></li>
+        <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
+          <span class="lang-option" data-lang="en">EN</span>
+          <span class="lang-separator">/</span>
+          <span class="lang-option" data-lang="hu">HU</span>
+        </button>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    {{ content | safe }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>&copy; {{ currentYear }} Mácsai Pottery. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="footer-links">
+        <a href="/contact/" data-i18n="footer.contact">Contact</a>
+        <a href="/about/" data-i18n="footer.about">About</a>
+        <a href="https://instagram.com/macsai.pottery" target="_blank" rel="noopener" data-i18n="footer.instagram">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

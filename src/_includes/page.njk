@@ -1,0 +1,40 @@
+---
+layout: base.njk
+---
+
+<section class="page-header">
+  <div class="container">
+    <h1 data-i18n="about.title">{{ title }}</h1>
+  </div>
+</section>
+
+<section class="page-content">
+  <div class="container">
+    <div class="content-wrapper">
+      {% if artist_photo %}
+        <div class="artist-section">
+          <img src="{{ artist_photo }}" alt="{{ artist_name }}" class="artist-photo">
+          {% if artist_name %}
+            <h2>{{ artist_name }}</h2>
+          {% endif %}
+          {% if location %}
+            <p class="location">📍 {{ location }}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+      <div class="text-content">
+        <h2 data-i18n="about.artistTitle">The Artist</h2>
+        <p data-i18n="about.artistText">László Mácsai creates unique pottery pieces ranging from bonsai pots to functional kitchenwares and decorative ceramics. Each piece is handcrafted with careful attention to traditional firing techniques and glaze applications.</p>
+
+        <h2 data-i18n="about.processTitle">The Process</h2>
+        <p data-i18n="about.processText">Every piece begins with carefully selected clay, shaped on the pottery wheel or hand-built depending on the design. The work is fired using various techniques including wood-salt firing at cone 10 and gas reduction firing at cone 8, creating unique surface effects and color variations.</p>
+
+        <h2 data-i18n="about.techniquesTitle">Materials & Techniques</h2>
+        <p data-i18n="about.techniquesText">Working primarily with stoneware and specialized glazes like shino, László explores the unpredictable beauty of high-temperature firing. The interplay between thick glaze application, firing atmosphere, and kiln placement creates one-of-a-kind surfaces - from crawling patterns in shino to carbon spots and pinkish flashing from reduction atmospheres.</p>
+
+        <h2 data-i18n="about.studioTitle">Studio</h2>
+        <p data-i18n-html="about.studioText">Based in Hungary, the studio focuses on creating functional and decorative ceramics that celebrate the natural variations inherent in the ceramic process. Follow the work on Instagram: <a href="https://instagram.com/macsai.pottery" target="_blank">@macsai.pottery</a> and <a href="https://instagram.com/macsai.laca" target="_blank">@macsai.laca</a></p>
+      </div>
+    </div>
+  </div>
+</section>
