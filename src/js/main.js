@@ -40,6 +40,26 @@
       }
     });
 
+    // Update pottery item content (title, description, materials, technique)
+    document.querySelectorAll('[data-en][data-hu]').forEach(element => {
+      const enContent = element.getAttribute('data-en');
+      const huContent = element.getAttribute('data-hu');
+
+      if (lang === 'hu' && huContent) {
+        if (element.tagName === 'DIV') {
+          element.innerHTML = huContent;
+        } else {
+          element.textContent = huContent;
+        }
+      } else if (enContent) {
+        if (element.tagName === 'DIV') {
+          element.innerHTML = enContent;
+        } else {
+          element.textContent = enContent;
+        }
+      }
+    });
+
     // Update HTML lang attribute
     document.getElementById('html-root').setAttribute('lang', lang);
 

@@ -43,7 +43,7 @@ permalink: /past-work/
                 <span class="status-overlay sold" data-i18n="pottery.sold">SOLD</span>
               </div>
               <div class="pottery-info">
-                <h3 class="pottery-title">{{ item.data.title }}</h3>
+                <h3 class="pottery-title" data-en="{{ item.data.title }}" data-hu="{{ item.data.title_hu or item.data.title }}">{{ item.data.title }}</h3>
                 <p class="pottery-category">{{ item.data.category }}</p>
                 {% if item.data.year %}
                   <p class="pottery-year">{{ item.data.year }}</p>

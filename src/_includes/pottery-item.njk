@@ -23,54 +23,54 @@ layout: base.njk
       </div>
 
       <div class="pottery-details">
-        <h1>{{ title }}</h1>
+        <h1 class="item-title" data-en="{{ title }}" data-hu="{{ title_hu or title }}">{{ title }}</h1>
 
         {% if status == "sold" %}
-          <span class="status-badge sold">SOLD</span>
+          <span class="status-badge sold" data-i18n="pottery.sold">SOLD</span>
         {% else %}
-          <span class="status-badge available">AVAILABLE</span>
+          <span class="status-badge available" data-i18n="pottery.available">AVAILABLE</span>
         {% endif %}
 
         <p class="category-tag">{{ category }}</p>
 
         <p class="price">{{ price | currency }}</p>
 
-        <div class="description">
+        <div class="description item-description" data-en="{{ description }}" data-hu="{{ description_hu or description }}">
           {{ description | safe }}
         </div>
 
         <div class="specifications">
-          <h3>Specifications</h3>
+          <h3 data-i18n="pottery.specifications">Specifications</h3>
           <ul>
             {% if height %}
-              <li><strong>Height:</strong> {{ height }}"</li>
+              <li><strong data-i18n="pottery.height">Height:</strong> {{ height }}"</li>
             {% endif %}
             {% if diameter %}
-              <li><strong>Diameter:</strong> {{ diameter }}"</li>
+              <li><strong data-i18n="pottery.diameter">Diameter:</strong> {{ diameter }}"</li>
             {% endif %}
             {% if width %}
-              <li><strong>Width:</strong> {{ width }}"</li>
+              <li><strong data-i18n="pottery.width">Width:</strong> {{ width }}"</li>
             {% endif %}
             {% if materials %}
-              <li><strong>Materials:</strong> {{ materials }}</li>
+              <li><strong data-i18n="pottery.materials">Materials:</strong> <span class="item-materials" data-en="{{ materials }}" data-hu="{{ materials_hu or materials }}">{{ materials }}</span></li>
             {% endif %}
             {% if technique %}
-              <li><strong>Technique:</strong> {{ technique }}</li>
+              <li><strong data-i18n="pottery.technique">Technique:</strong> <span class="item-technique" data-en="{{ technique }}" data-hu="{{ technique_hu or technique }}">{{ technique }}</span></li>
             {% endif %}
             {% if year %}
-              <li><strong>Year:</strong> {{ year }}</li>
+              <li><strong data-i18n="pottery.year">Year:</strong> {{ year }}</li>
             {% endif %}
           </ul>
         </div>
 
         {% if status == "available" %}
-          <a href="/contact/?item={{ title | urlencode }}" class="btn btn-primary btn-large">Inquire About This Piece</a>
+          <a href="/contact/?item={{ title | urlencode }}" class="btn btn-primary btn-large" data-i18n="pottery.inquire">Inquire About This Piece</a>
         {% else %}
-          <p class="sold-notice">This piece has been sold and is no longer available.</p>
+          <p class="sold-notice" data-i18n="pottery.soldNotice">This piece has been sold and is no longer available.</p>
         {% endif %}
 
         <div class="navigation-links">
-          <a href="/available/" class="back-link">← Back to Gallery</a>
+          <a href="/available/" class="back-link" data-i18n="pottery.backToGallery">← Back to Gallery</a>
         </div>
       </div>
     </div>

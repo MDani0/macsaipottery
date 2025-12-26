@@ -13,7 +13,8 @@ collections:
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Title (English)", name: "title", widget: "string"}
+      - {label: "Title (Hungarian)", name: "title_hu", widget: "string", required: false}
       - {label: "Images", name: "images", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
       - {label: "Price", name: "price", widget: "number"}
       - {label: "Status", name: "status", widget: "select", options: ["available", "sold"]}
@@ -21,9 +22,12 @@ collections:
       - {label: "Height (inches)", name: "height", widget: "number", required: false}
       - {label: "Diameter (inches)", name: "diameter", widget: "number", required: false}
       - {label: "Width (inches)", name: "width", widget: "number", required: false}
-      - {label: "Materials", name: "materials", widget: "string", required: false}
-      - {label: "Technique", name: "technique", widget: "string", required: false}
-      - {label: "Description", name: "description", widget: "text"}
+      - {label: "Materials (English)", name: "materials", widget: "string", required: false}
+      - {label: "Materials (Hungarian)", name: "materials_hu", widget: "string", required: false}
+      - {label: "Technique (English)", name: "technique", widget: "string", required: false}
+      - {label: "Technique (Hungarian)", name: "technique_hu", widget: "string", required: false}
+      - {label: "Description (English)", name: "description", widget: "text"}
+      - {label: "Description (Hungarian)", name: "description_hu", widget: "text", required: false}
       - {label: "Year Created", name: "year", widget: "number", required: false}
       - {label: "Featured", name: "featured", widget: "boolean", default: false, required: false}
 
@@ -51,3 +55,213 @@ collections:
           - {label: "Hero Title", name: "hero_title", widget: "string"}
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
           - {label: "Intro Text", name: "body", widget: "markdown"}
+
+  - name: "translations"
+    label: "UI Translations"
+    files:
+      - label: "Translations"
+        name: "translations"
+        file: "src/_data/translations.json"
+        fields:
+          - label: "English Translations"
+            name: "en"
+            widget: "object"
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - {label: "Home", name: "home", widget: "string"}
+                  - {label: "Available", name: "available", widget: "string"}
+                  - {label: "Past Work", name: "pastWork", widget: "string"}
+                  - {label: "About", name: "about", widget: "string"}
+                  - {label: "Contact", name: "contact", widget: "string"}
+              - label: "Gallery Filters"
+                name: "gallery"
+                widget: "object"
+                fields:
+                  - {label: "All", name: "filterAll", widget: "string"}
+                  - {label: "Bowls", name: "filterBowls", widget: "string"}
+                  - {label: "Vases", name: "filterVases", widget: "string"}
+                  - {label: "Mugs", name: "filterMugs", widget: "string"}
+                  - {label: "Plates", name: "filterPlates", widget: "string"}
+                  - {label: "Sculptures", name: "filterSculptures", widget: "string"}
+                  - {label: "Bonsai Pots", name: "filterBonsaiPots", widget: "string"}
+                  - {label: "Other", name: "filterOther", widget: "string"}
+              - label: "Footer"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - {label: "Rights", name: "rights", widget: "string"}
+                  - {label: "Contact", name: "contact", widget: "string"}
+                  - {label: "About", name: "about", widget: "string"}
+                  - {label: "Instagram", name: "instagram", widget: "string"}
+              - label: "Home Page"
+                name: "home"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Featured Title", name: "featuredTitle", widget: "string"}
+                  - {label: "View Details", name: "viewDetails", widget: "string"}
+                  - {label: "View All", name: "viewAll", widget: "string"}
+              - label: "About Page"
+                name: "about"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Artist Title", name: "artistTitle", widget: "string"}
+                  - {label: "Artist Text", name: "artistText", widget: "text"}
+                  - {label: "Process Title", name: "processTitle", widget: "string"}
+                  - {label: "Process Text", name: "processText", widget: "text"}
+                  - {label: "Techniques Title", name: "techniquesTitle", widget: "string"}
+                  - {label: "Techniques Text", name: "techniquesText", widget: "text"}
+                  - {label: "Studio Title", name: "studioTitle", widget: "string"}
+                  - {label: "Studio Text (with HTML)", name: "studioText", widget: "text"}
+              - label: "Contact Page"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Email", name: "email", widget: "string"}
+                  - {label: "Phone", name: "phone", widget: "string"}
+                  - {label: "Item", name: "item", widget: "string"}
+                  - {label: "Message", name: "message", widget: "string"}
+                  - {label: "Required", name: "required", widget: "string"}
+                  - {label: "Submit", name: "submit", widget: "string"}
+                  - {label: "Other Ways", name: "otherWays", widget: "string"}
+                  - {label: "Email Label", name: "emailLabel", widget: "string"}
+                  - {label: "Response Time", name: "responseTime", widget: "string"}
+                  - {label: "Response Text", name: "responseText", widget: "string"}
+                  - {label: "Studio Visits", name: "studioVisits", widget: "string"}
+                  - {label: "Studio Visits Text", name: "studioVisitsText", widget: "string"}
+              - label: "Available Page"
+                name: "available"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - label: "Past Work Page"
+                name: "pastWork"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - label: "Pottery Details"
+                name: "pottery"
+                widget: "object"
+                fields:
+                  - {label: "Available Badge", name: "available", widget: "string"}
+                  - {label: "Sold Badge", name: "sold", widget: "string"}
+                  - {label: "Specifications", name: "specifications", widget: "string"}
+                  - {label: "Height", name: "height", widget: "string"}
+                  - {label: "Width", name: "width", widget: "string"}
+                  - {label: "Diameter", name: "diameter", widget: "string"}
+                  - {label: "Materials", name: "materials", widget: "string"}
+                  - {label: "Technique", name: "technique", widget: "string"}
+                  - {label: "Year", name: "year", widget: "string"}
+                  - {label: "Inquire Button", name: "inquire", widget: "string"}
+                  - {label: "Sold Notice", name: "soldNotice", widget: "string"}
+                  - {label: "Back to Gallery", name: "backToGallery", widget: "string"}
+          - label: "Hungarian Translations"
+            name: "hu"
+            widget: "object"
+            fields:
+              - label: "Navigation"
+                name: "nav"
+                widget: "object"
+                fields:
+                  - {label: "Home", name: "home", widget: "string"}
+                  - {label: "Available", name: "available", widget: "string"}
+                  - {label: "Past Work", name: "pastWork", widget: "string"}
+                  - {label: "About", name: "about", widget: "string"}
+                  - {label: "Contact", name: "contact", widget: "string"}
+              - label: "Gallery Filters"
+                name: "gallery"
+                widget: "object"
+                fields:
+                  - {label: "All", name: "filterAll", widget: "string"}
+                  - {label: "Bowls", name: "filterBowls", widget: "string"}
+                  - {label: "Vases", name: "filterVases", widget: "string"}
+                  - {label: "Mugs", name: "filterMugs", widget: "string"}
+                  - {label: "Plates", name: "filterPlates", widget: "string"}
+                  - {label: "Sculptures", name: "filterSculptures", widget: "string"}
+                  - {label: "Bonsai Pots", name: "filterBonsaiPots", widget: "string"}
+                  - {label: "Other", name: "filterOther", widget: "string"}
+              - label: "Footer"
+                name: "footer"
+                widget: "object"
+                fields:
+                  - {label: "Rights", name: "rights", widget: "string"}
+                  - {label: "Contact", name: "contact", widget: "string"}
+                  - {label: "About", name: "about", widget: "string"}
+                  - {label: "Instagram", name: "instagram", widget: "string"}
+              - label: "Home Page"
+                name: "home"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Featured Title", name: "featuredTitle", widget: "string"}
+                  - {label: "View Details", name: "viewDetails", widget: "string"}
+                  - {label: "View All", name: "viewAll", widget: "string"}
+              - label: "About Page"
+                name: "about"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Artist Title", name: "artistTitle", widget: "string"}
+                  - {label: "Artist Text", name: "artistText", widget: "text"}
+                  - {label: "Process Title", name: "processTitle", widget: "string"}
+                  - {label: "Process Text", name: "processText", widget: "text"}
+                  - {label: "Techniques Title", name: "techniquesTitle", widget: "string"}
+                  - {label: "Techniques Text", name: "techniquesText", widget: "text"}
+                  - {label: "Studio Title", name: "studioTitle", widget: "string"}
+                  - {label: "Studio Text (with HTML)", name: "studioText", widget: "text"}
+              - label: "Contact Page"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Email", name: "email", widget: "string"}
+                  - {label: "Phone", name: "phone", widget: "string"}
+                  - {label: "Item", name: "item", widget: "string"}
+                  - {label: "Message", name: "message", widget: "string"}
+                  - {label: "Required", name: "required", widget: "string"}
+                  - {label: "Submit", name: "submit", widget: "string"}
+                  - {label: "Other Ways", name: "otherWays", widget: "string"}
+                  - {label: "Email Label", name: "emailLabel", widget: "string"}
+                  - {label: "Response Time", name: "responseTime", widget: "string"}
+                  - {label: "Response Text", name: "responseText", widget: "string"}
+                  - {label: "Studio Visits", name: "studioVisits", widget: "string"}
+                  - {label: "Studio Visits Text", name: "studioVisitsText", widget: "string"}
+              - label: "Available Page"
+                name: "available"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - label: "Past Work Page"
+                name: "pastWork"
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+              - label: "Pottery Details"
+                name: "pottery"
+                widget: "object"
+                fields:
+                  - {label: "Available Badge", name: "available", widget: "string"}
+                  - {label: "Sold Badge", name: "sold", widget: "string"}
+                  - {label: "Specifications", name: "specifications", widget: "string"}
+                  - {label: "Height", name: "height", widget: "string"}
+                  - {label: "Width", name: "width", widget: "string"}
+                  - {label: "Diameter", name: "diameter", widget: "string"}
+                  - {label: "Materials", name: "materials", widget: "string"}
+                  - {label: "Technique", name: "technique", widget: "string"}
+                  - {label: "Year", name: "year", widget: "string"}
+                  - {label: "Inquire Button", name: "inquire", widget: "string"}
+                  - {label: "Sold Notice", name: "soldNotice", widget: "string"}
+                  - {label: "Back to Gallery", name: "backToGallery", widget: "string"}
