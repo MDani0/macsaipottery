@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: MDani0/laca-honlap  # Replace MDani0 with your GitHub username if different
   branch: main
 
 media_folder: "src/images/uploads"
