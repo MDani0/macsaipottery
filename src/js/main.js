@@ -181,15 +181,32 @@ function changeImage(imageSrc, thumbnailElement) {
 }
 
 // ===================================
-// CONTACT FORM - Pre-fill item from URL
+// CONTACT FORM - Pre-fill item from URL and show success message
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
   const itemInput = document.getElementById('item');
+  const urlParams = new URLSearchParams(window.location.search);
+
+  // Pre-fill item field if specified in URL
   if (itemInput) {
-    const urlParams = new URLSearchParams(window.location.search);
     const itemName = urlParams.get('item');
     if (itemName) {
       itemInput.value = decodeURIComponent(itemName);
+    }
+  }
+
+  // Show success message if form was submitted
+  if (urlParams.get('success') === 'true') {
+    const formContainer = document.querySelector('.contact-form-container');
+    if (formContainer) {
+      const successMessage = document.createElement('div');
+      successMessage.className = 'form-success-message';
+      successMessage.innerHTML = '<p><strong>Thank you for your message!</strong></p><p>We\'ll get back to you within 24-48 hours.</p>';
+      successMessage.style.cssText = 'background-color: #d4edda; color: #155724; padding: 1rem; border-radius: 4px; margin-bottom: 1.5rem; border: 1px solid #c3e6cb;';
+      formContainer.insertBefore(successMessage, formContainer.firstChild);
+
+      // Scroll to the success message
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
   }
 });
