@@ -56,16 +56,18 @@ permalink: /contact/
         <h3 data-i18n="contact.otherWays">Other Ways to Connect</h3>
         <div class="info-block">
           <h4 data-i18n="contact.emailLabel">Email</h4>
-          <p><a href="macsaipottery94@gmail.com">macsaipottery94@gmail.com</a></p>
+          <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
         </div>
         <div class="info-block">
           <h4 data-i18n="contact.responseTime">Response Time</h4>
-          <p data-i18n="contact.responseText">We typically respond within 24-48 hours</p>
+          <p data-i18n="contact.responseText">We typically respond within {{ contact.response_time_hours }} hours</p>
         </div>
+        {% if contact.studio_visits_available %}
         <div class="info-block">
           <h4 data-i18n="contact.studioVisits">Studio Visits</h4>
           <p data-i18n="contact.studioVisitsText">By appointment only. Please inquire via the form.</p>
         </div>
+        {% endif %}
       </div>
     </div>
   </div>

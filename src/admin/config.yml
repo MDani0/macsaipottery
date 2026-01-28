@@ -56,6 +56,14 @@ collections:
           - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
           - {label: "Intro Text", name: "body", widget: "markdown"}
 
+      - label: "Contact Page"
+        name: "contact"
+        file: "src/_data/contact.json"
+        fields:
+          - {label: "Email Address", name: "email", widget: "string"}
+          - {label: "Response Time (hours)", name: "response_time_hours", widget: "string", hint: "e.g., 24-48"}
+          - {label: "Show Studio Visits Section", name: "studio_visits_available", widget: "boolean", default: true}
+
   - name: "translations"
     label: "UI Translations"
     files:
