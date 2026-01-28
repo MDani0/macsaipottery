@@ -46,6 +46,7 @@ permalink: /available/
                 <h3 class="pottery-title" data-en="{{ item.data.title }}" data-hu="{{ item.data.title_hu or item.data.title }}">{{ item.data.title }}</h3>
                 <p class="pottery-category">{{ item.data.category }}</p>
                 <p class="pottery-price" data-hu="{{ item.data.price | currency }}" data-en="{{ item.data.price | currencyEn }}">{{ item.data.price | currency }}</p>
+                {% if item.data.price_eur %}<p class="pottery-price-eur">{{ item.data.price_eur | currencyEur }}</p>{% endif %}
               </div>
             </a>
           </article>

@@ -5,8 +5,8 @@ images:
 price: 28000
 status: available
 category: Bonsai Pot
-height: 3
-width: 6
+height: 7.5
+width: 15
 materials: Stoneware
 technique: Hand-built
 description: Kurama bonsai pot handcrafted with traditional techniques. Designed

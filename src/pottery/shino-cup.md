@@ -6,8 +6,8 @@ images:
 price: 10000
 status: available
 category: Mug
-height: 3.5
-diameter: 3
+height: 9
+diameter: 7.5
 materials: Dark stoneware body, thick Shino glaze
 technique: Gas kiln, Cone 8, Heavy reduction
 description: Another shino cup featuring a dark stoneware body with thick glaze

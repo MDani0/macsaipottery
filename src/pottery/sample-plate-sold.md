@@ -5,7 +5,7 @@ images:
 price: 45000
 status: sold
 category: Plate
-diameter: 14
+diameter: 35.5
 materials: Stoneware, ash glaze
 technique: Wheel-thrown
 description: A large serving platter with a beautiful ash glaze pattern. This piece was commissioned for a special dinner event.

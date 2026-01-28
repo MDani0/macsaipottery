@@ -46,6 +46,12 @@ module.exports = function(eleventyConfig) {
     return items.filter(item => item.data.status === "available").slice(0, 6);
   });
 
+  // Filter to convert cm to inches
+  eleventyConfig.addFilter("toInches", function(cm) {
+    if (!cm) return null;
+    return (cm / 2.54).toFixed(1);
+  });
+
   // Add global data for current year
   eleventyConfig.addGlobalData("currentYear", new Date().getFullYear());
 
