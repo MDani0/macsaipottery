@@ -15,11 +15,28 @@ module.exports = function(eleventyConfig) {
     return items.filter(item => item.data.status === "sold");
   });
 
-  // Filter to format price
+  // Filter to format price in Hungarian (Ft)
   eleventyConfig.addFilter("currency", function(value) {
     return new Intl.NumberFormat('hu-HU', {
+      style: 'decimal',
+      minimumFractionDigits: 0
+    }).format(value) + ' Ft';
+  });
+
+  // Filter to format price in English (HUF)
+  eleventyConfig.addFilter("currencyEn", function(value) {
+    return new Intl.NumberFormat('en-US', {
+      style: 'decimal',
+      minimumFractionDigits: 0
+    }).format(value) + ' HUF';
+  });
+
+  // Filter to format Euro price (optional)
+  eleventyConfig.addFilter("currencyEur", function(value) {
+    if (!value) return null;
+    return new Intl.NumberFormat('en-US', {
       style: 'currency',
-      currency: 'HUF',
+      currency: 'EUR',
       minimumFractionDigits: 0
     }).format(value);
   });

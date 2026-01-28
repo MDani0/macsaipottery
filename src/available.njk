@@ -45,7 +45,7 @@ permalink: /available/
               <div class="pottery-info">
                 <h3 class="pottery-title" data-en="{{ item.data.title }}" data-hu="{{ item.data.title_hu or item.data.title }}">{{ item.data.title }}</h3>
                 <p class="pottery-category">{{ item.data.category }}</p>
-                <p class="pottery-price">{{ item.data.price | currency }}</p>
+                <p class="pottery-price" data-hu="{{ item.data.price | currency }}" data-en="{{ item.data.price | currencyEn }}">{{ item.data.price | currency }}</p>
               </div>
             </a>
           </article>

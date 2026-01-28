@@ -33,7 +33,7 @@ layout: base.njk
 
         <p class="category-tag">{{ category }}</p>
 
-        <p class="price">{{ price | currency }}</p>
+        <p class="price" data-hu="{{ price | currency }}" data-en="{{ price | currencyEn }}">{{ price | currency }}</p>
 
         <div class="description item-description" data-en="{{ description }}" data-hu="{{ description_hu or description }}">
           {{ description | safe }}
