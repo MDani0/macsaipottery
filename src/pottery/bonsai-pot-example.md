@@ -3,6 +3,7 @@ title: Kurama Bonsai Pot
 images:
   - /images/uploads/bonsai_pot.png
 price: 28000
+price_eur: 70
 status: available
 category: Bonsai Pot
 height: 7.5
