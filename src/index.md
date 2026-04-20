@@ -1,7 +1,7 @@
 ---
-layout: home.njk
 title: Home
-hero_image: /images/hero-pottery.jpg
+layout: home.njk
+hero_image: /images/uploads/img_20260419_103033.png
 hero_title: Mácsai Pottery
 hero_subtitle: Bonsai pots, kitchenwares, and decorative ceramics from Hungary
 ---
