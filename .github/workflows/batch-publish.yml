@@ -1,0 +1,116 @@
+name: Batch Publish CMS Drafts
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr_numbers:
+        description: 'PR numbers to merge (comma-separated, e.g., "123,124,125"). Leave empty to merge ALL open CMS PRs.'
+        required: false
+        default: ''
+
+jobs:
+  batch-publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Find and merge CMS PRs
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBERS: ${{ github.event.inputs.pr_numbers }}
+        run: |
+          # Get list of PRs to merge
+          if [ -z "$PR_NUMBERS" ]; then
+            # Find all open PRs from CMS (branches starting with cms/)
+            echo "Finding all open CMS pull requests..."
+            PRS=$(gh pr list --state open --json number,headRefName --jq '.[] | select(.headRefName | startswith("cms/")) | .number' | tr '\n' ',' | sed 's/,$//')
+          else
+            PRS="$PR_NUMBERS"
+          fi
+
+          if [ -z "$PRS" ]; then
+            echo "No CMS pull requests found to merge."
+            exit 0
+          fi
+
+          echo "PRs to merge: $PRS"
+          IFS=',' read -ra PR_ARRAY <<< "$PRS"
+
+          # Create a temporary branch for batch merge
+          BATCH_BRANCH="cms/batch-publish-$(date +%s)"
+          git checkout -b "$BATCH_BRANCH"
+
+          # Collect all PR titles for commit message
+          COMMIT_MSG="Batch publish CMS items"$'\n\n'
+          ITEMS_COUNT=0
+
+          # Merge each PR into the batch branch
+          for PR_NUM in "${PR_ARRAY[@]}"; do
+            PR_NUM=$(echo "$PR_NUM" | xargs) # trim whitespace
+            if [ -z "$PR_NUM" ]; then
+              continue
+            fi
+
+            echo "Processing PR #$PR_NUM..."
+
+            # Get PR details
+            PR_TITLE=$(gh pr view "$PR_NUM" --json title --jq '.title')
+            PR_BRANCH=$(gh pr view "$PR_NUM" --json headRefName --jq '.headRefName')
+
+            if [ -z "$PR_BRANCH" ]; then
+              echo "Warning: Could not find branch for PR #$PR_NUM, skipping..."
+              continue
+            fi
+
+            # Fetch and merge the PR branch
+            git fetch origin "$PR_BRANCH"
+            git merge --no-ff --no-edit "origin/$PR_BRANCH" || {
+              echo "Error: Failed to merge PR #$PR_NUM ($PR_BRANCH)"
+              echo "You may need to resolve conflicts manually."
+              exit 1
+            }
+
+            COMMIT_MSG+="- $PR_TITLE (#$PR_NUM)"$'\n'
+            ITEMS_COUNT=$((ITEMS_COUNT + 1))
+
+            # Close the PR
+            gh pr close "$PR_NUM" --comment "Merged via batch publish action" --delete-branch
+          done
+
+          if [ $ITEMS_COUNT -eq 0 ]; then
+            echo "No PRs were successfully merged."
+            exit 0
+          fi
+
+          COMMIT_MSG+=$'\n'"Published $ITEMS_COUNT items in one batch"
+
+          # Create a single squashed commit
+          git reset --soft master
+          git commit -m "$COMMIT_MSG"
+
+          # Push to master
+          echo "Pushing batch commit to master..."
+          git push origin HEAD:master
+
+          echo "✓ Successfully batch published $ITEMS_COUNT items!"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Batch Publish Complete! 🎉" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "All CMS drafts have been merged into one commit." >> $GITHUB_STEP_SUMMARY
+          echo "Netlify will now build and deploy all changes at once." >> $GITHUB_STEP_SUMMARY
