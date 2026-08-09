@@ -1,11 +1,10 @@
 ---
-layout: page.njk
 title: About
+layout: page.njk
 artist_name: Mácsai László
 artist_photo: /images/uploads/laca.png
 location: Dör, Hungary
 ---
-
 ## The Artist
 
 László Mácsai creates unique pottery pieces ranging from bonsai pots to functional kitchenwares and decorative ceramics. Each piece is handcrafted with careful attention to traditional firing techniques and glaze applications.
@@ -20,4 +19,4 @@ Working primarily with stoneware and specialized glazes like shino, László exp
 
 ## Studio
 
-Based in Hungary, the studio focuses on creating functional and decorative ceramics that celebrate the natural variations inherent in the ceramic process. Follow the work on Instagram: [@macsai.pottery](https://instagram.com/macsai.pottery) and [@macsai.laca](https://instagram.com/macsai.laca)
+Based in Hungary, the studio focuses on creating functional and decorative ceramics that celebrate the natural variations inherent in the ceramic process. Follow on Instagram: [@macsai.pottery](https://instagram.com/macsai.pottery) and [@macsai.laca](https://instagram.com/macsai.laca)
