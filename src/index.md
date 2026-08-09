@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: home.njk
-hero_image: /images/uploads/whatsapp-kép-2025-02-15-20.13.36_40458d78.jpg
+hero_image: /images/uploads/index.png
 hero_title: Mácsai Pottery
 hero_subtitle: Bonsai pots, kitchenwares, and decorative ceramics from Hungary
 ---
