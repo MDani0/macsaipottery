@@ -55,6 +55,19 @@ module.exports = function(eleventyConfig) {
   // Add global data for current year
   eleventyConfig.addGlobalData("currentYear", new Date().getFullYear());
 
+  // Add global data merger for new structure
+  // This loads pages/* and sitewide/* and makes them available
+  // Eleventy auto-loads these as: pages.home, pages.about, sitewide.navigation, etc.
+  // We just need to add a helper to get current language text
+  eleventyConfig.addGlobalData("lang", "hu"); // Default to Hungarian
+
+  // Add filter to get text in current language
+  eleventyConfig.addFilter("t", function(obj, lang = "hu") {
+    if (!obj) return "";
+    if (typeof obj === "string") return obj;
+    return obj[lang] || obj.en || "";
+  });
+
   return {
     dir: {
       input: "src",

@@ -6,8 +6,8 @@ permalink: /contact/
 
 <section class="page-header">
   <div class="container">
-    <h1 data-i18n="contact.title">Get in Touch</h1>
-    <p class="subtitle" data-i18n="contact.subtitle">Interested in a piece or have a question? Send us a message!</p>
+    <h1 data-en="{{ pages.contact.title.en }}" data-hu="{{ pages.contact.title.hu }}">{{ pages.contact.title.hu }}</h1>
+    <p class="subtitle" data-en="{{ pages.contact.subtitle.en }}" data-hu="{{ pages.contact.subtitle.hu }}">{{ pages.contact.subtitle.hu }}</p>
   </div>
 </section>
 
@@ -24,50 +24,48 @@ permalink: /contact/
           </p>
 
           <div class="form-group">
-            <label for="name"><span data-i18n="contact.name">Name</span> <span data-i18n="contact.required">*</span></label>
+            <label for="name"><span data-en="{{ pages.contact.form.name.en }}" data-hu="{{ pages.contact.form.name.hu }}">{{ pages.contact.form.name.hu }}</span> <span data-en="{{ pages.contact.form.required.en }}" data-hu="{{ pages.contact.form.required.hu }}">{{ pages.contact.form.required.hu }}</span></label>
             <input type="text" id="name" name="name" required>
           </div>
 
           <div class="form-group">
-            <label for="email"><span data-i18n="contact.email">Email</span> <span data-i18n="contact.required">*</span></label>
+            <label for="email"><span data-en="{{ pages.contact.form.email.en }}" data-hu="{{ pages.contact.form.email.hu }}">{{ pages.contact.form.email.hu }}</span> <span data-en="{{ pages.contact.form.required.en }}" data-hu="{{ pages.contact.form.required.hu }}">{{ pages.contact.form.required.hu }}</span></label>
             <input type="email" id="email" name="email" required>
           </div>
 
           <div class="form-group">
-            <label for="phone" data-i18n="contact.phone">Phone</label>
+            <label for="phone" data-en="{{ pages.contact.form.phone.en }}" data-hu="{{ pages.contact.form.phone.hu }}">{{ pages.contact.form.phone.hu }}</label>
             <input type="tel" id="phone" name="phone">
           </div>
 
           <div class="form-group">
-            <label for="item" data-i18n="contact.item">Interested in specific piece?</label>
+            <label for="item" data-en="{{ pages.contact.form.item.en }}" data-hu="{{ pages.contact.form.item.hu }}">{{ pages.contact.form.item.hu }}</label>
             <input type="text" id="item" name="item" value="">
           </div>
 
           <div class="form-group">
-            <label for="message"><span data-i18n="contact.message">Message</span> <span data-i18n="contact.required">*</span></label>
+            <label for="message"><span data-en="{{ pages.contact.form.message.en }}" data-hu="{{ pages.contact.form.message.hu }}">{{ pages.contact.form.message.hu }}</span> <span data-en="{{ pages.contact.form.required.en }}" data-hu="{{ pages.contact.form.required.hu }}">{{ pages.contact.form.required.hu }}</span></label>
             <textarea id="message" name="message" rows="6" required></textarea>
           </div>
 
-          <button type="submit" class="btn btn-primary btn-large" data-i18n="contact.submit">Send Message</button>
+          <button type="submit" class="btn btn-primary btn-large" data-en="{{ pages.contact.form.submit.en }}" data-hu="{{ pages.contact.form.submit.hu }}">{{ pages.contact.form.submit.hu }}</button>
         </form>
       </div>
 
       <div class="contact-info">
-        <h3 data-i18n="contact.otherWays">Other Ways to Connect</h3>
+        <h3 data-en="{{ pages.contact.otherWays.title.en }}" data-hu="{{ pages.contact.otherWays.title.hu }}">{{ pages.contact.otherWays.title.hu }}</h3>
         <div class="info-block">
-          <h4 data-i18n="contact.emailLabel">Email</h4>
-          <p><a href="mailto:{{ contact.email }}">{{ contact.email }}</a></p>
+          <h4 data-en="{{ pages.contact.otherWays.emailLabel.en }}" data-hu="{{ pages.contact.otherWays.emailLabel.hu }}">{{ pages.contact.otherWays.emailLabel.hu }}</h4>
+          <p><a href="mailto:{{ pages.contact.email }}">{{ pages.contact.email }}</a></p>
         </div>
         <div class="info-block">
-          <h4 data-i18n="contact.responseTime">Response Time</h4>
-          <p data-i18n="contact.responseText">We typically respond within {{ contact.response_time_hours }} hours</p>
+          <h4 data-en="{{ pages.contact.otherWays.responseTime.label.en }}" data-hu="{{ pages.contact.otherWays.responseTime.label.hu }}">{{ pages.contact.otherWays.responseTime.label.hu }}</h4>
+          <p data-en="{{ pages.contact.otherWays.responseTime.text.en }}" data-hu="{{ pages.contact.otherWays.responseTime.text.hu }}">{{ pages.contact.otherWays.responseTime.text.hu }}</p>
         </div>
-        {% if contact.studio_visits_available %}
         <div class="info-block">
-          <h4 data-i18n="contact.studioVisits">Studio Visits</h4>
-          <p data-i18n="contact.studioVisitsText">By appointment only. Please inquire via the form.</p>
+          <h4 data-en="{{ pages.contact.otherWays.studioVisits.label.en }}" data-hu="{{ pages.contact.otherWays.studioVisits.label.hu }}">{{ pages.contact.otherWays.studioVisits.label.hu }}</h4>
+          <p data-en="{{ pages.contact.otherWays.studioVisits.text.en }}" data-hu="{{ pages.contact.otherWays.studioVisits.text.hu }}">{{ pages.contact.otherWays.studioVisits.text.hu }}</p>
         </div>
-        {% endif %}
       </div>
     </div>
   </div>

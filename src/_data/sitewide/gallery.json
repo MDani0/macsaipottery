@@ -1,0 +1,46 @@
+{
+  "filters": {
+    "all": {
+      "en": "All",
+      "hu": "Összes"
+    },
+    "bowls": {
+      "en": "Bowls",
+      "hu": "Tálak"
+    },
+    "vases": {
+      "en": "Vases",
+      "hu": "Vázák"
+    },
+    "mugs": {
+      "en": "Mugs, and cups",
+      "hu": "Bögrék, csészék"
+    },
+    "plates": {
+      "en": "Plates",
+      "hu": "Tányérok"
+    },
+    "sculptures": {
+      "en": "Sculptures",
+      "hu": "Szobrok"
+    },
+    "bonsaiPots": {
+      "en": "Bonsai Pots",
+      "hu": "Bonsai tálak"
+    },
+    "other": {
+      "en": "Other",
+      "hu": "Egyéb"
+    }
+  },
+  "emptyStates": {
+    "available": {
+      "en": "No pieces are currently available. Please check back soon or contact us for upcoming pieces.",
+      "hu": "Jelenleg nincs elérhető darab. Kérlek, látogass vissza később, vagy vedd fel velem a kapcsolatot a készülő darabok miatt."
+    },
+    "pastWork": {
+      "en": "No sold pieces to display yet. Check back soon!",
+      "hu": "Még nincsenek megjelenítendő eladott darabok. Nézz vissza hamarosan!"
+    }
+  }
+}

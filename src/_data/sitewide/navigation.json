@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "home": {
+      "en": "Home",
+      "hu": "Kezdőlap"
+    },
+    "available": {
+      "en": "Available Pieces",
+      "hu": "Elérhető Darabok"
+    },
+    "pastWork": {
+      "en": "Past Work",
+      "hu": "Korábbi Munkák"
+    },
+    "about": {
+      "en": "About",
+      "hu": "Rólam"
+    },
+    "contact": {
+      "en": "Contact",
+      "hu": "Kapcsolat"
+    }
+  },
+  "footer": {
+    "rights": {
+      "en": "All rights reserved.",
+      "hu": "Minden jog fenntartva."
+    },
+    "contact": {
+      "en": "Contact",
+      "hu": "Kapcsolat"
+    },
+    "about": {
+      "en": "About",
+      "hu": "Rólam"
+    },
+    "instagram": {
+      "en": "Instagram",
+      "hu": "Instagram"
+    }
+  }
+}

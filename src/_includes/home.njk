@@ -4,30 +4,27 @@ layout: base.njk
 
 <section class="hero">
   <div class="hero-image-container">
-    <img src="{{ hero_image }}" alt="Mácsai Pottery" class="hero-image">
+    <img src="{{ pages.home.heroImage }}" alt="Mácsai Pottery" class="hero-image">
     <div class="hero-overlay"></div>
   </div>
   <div class="hero-content">
-    <h1 class="hero-title" data-i18n="home.heroTitle">Mácsai Pottery</h1>
-    <p class="hero-subtitle" data-i18n="home.heroSubtitle">Bonsai pots, kitchenwares, and decorative ceramics from Hungary</p>
-    <a href="/available/" class="btn btn-primary" data-i18n="nav.available">Available Pieces</a>
+    <h1 class="hero-title" data-en="{{ pages.home.heroTitle.en }}" data-hu="{{ pages.home.heroTitle.hu }}">{{ pages.home.heroTitle.hu }}</h1>
+    <p class="hero-subtitle" data-en="{{ pages.home.heroSubtitle.en }}" data-hu="{{ pages.home.heroSubtitle.hu }}">{{ pages.home.heroSubtitle.hu }}</p>
+    <a href="/available/" class="btn btn-primary" data-en="{{ sitewide.navigation.nav.available.en }}" data-hu="{{ sitewide.navigation.nav.available.hu }}">{{ sitewide.navigation.nav.available.hu }}</a>
   </div>
 </section>
 
 <section class="intro-section">
   <div class="container">
-    <div data-i18n-html="home.intro">
-      Welcome to the studio of László Mácsai, where each piece is thoughtfully crafted by hand using traditional firing techniques. Every item is unique, showcasing the unpredictable beauty of wood-salt and reduction firing.
-    </div>
-    <div data-i18n-html="home.intro2">
-      From functional kitchenwares to specialized bonsai pots and decorative pieces, each work celebrates the natural variations that make handmade ceramics truly one-of-a-kind.
+    <div data-en="{{ pages.home.intro.en }}" data-hu="{{ pages.home.intro.hu }}">
+      {{ pages.home.intro.hu | safe }}
     </div>
   </div>
 </section>
 
 <section class="featured-pieces">
   <div class="container">
-    <h2 class="section-title" data-i18n="home.featuredTitle">Featured Pieces</h2>
+    <h2 class="section-title" data-en="{{ pages.home.featuredTitle.en }}" data-hu="{{ pages.home.featuredTitle.hu }}">{{ pages.home.featuredTitle.hu }}</h2>
     <div class="pottery-grid">
       {% set featuredItems = collections.pottery | available | featured %}
       {% for item in featuredItems %}
@@ -51,7 +48,7 @@ layout: base.njk
       {% endfor %}
     </div>
     <div class="text-center">
-      <a href="/available/" class="btn btn-secondary" data-i18n="home.viewAll">See All Available Pieces</a>
+      <a href="/available/" class="btn btn-secondary" data-en="{{ pages.home.viewAll.en }}" data-hu="{{ pages.home.viewAll.hu }}">{{ pages.home.viewAll.hu }}</a>
     </div>
   </div>
 </section>

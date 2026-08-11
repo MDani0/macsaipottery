@@ -7,7 +7,7 @@
   <meta name="description" content="Handcrafted pottery by László Mácsai - bonsai pots, kitchenwares, and decorative ceramics from Hungary">
   <link rel="stylesheet" href="/css/style.css">
   <script>
-    window.translations = {{ translations | dump | safe }};
+    // Language switching handled by data-en/data-hu attributes in templates
   </script>
 </head>
 <body>
@@ -15,11 +15,11 @@
     <nav class="nav-container">
       <a href="/" class="logo">Mácsai Pottery</a>
       <ul class="nav-menu">
-        <li><a href="/" data-i18n="nav.home">Home</a></li>
-        <li><a href="/available/" data-i18n="nav.available">Available Pieces</a></li>
-        <li><a href="/past-work/" data-i18n="nav.pastWork">Past Work</a></li>
-        <li><a href="/about/" data-i18n="nav.about">About</a></li>
-        <li><a href="/contact/" data-i18n="nav.contact">Contact</a></li>
+        <li><a href="/" data-en="{{ sitewide.navigation.nav.home.en }}" data-hu="{{ sitewide.navigation.nav.home.hu }}">{{ sitewide.navigation.nav.home.hu }}</a></li>
+        <li><a href="/available/" data-en="{{ sitewide.navigation.nav.available.en }}" data-hu="{{ sitewide.navigation.nav.available.hu }}">{{ sitewide.navigation.nav.available.hu }}</a></li>
+        <li><a href="/past-work/" data-en="{{ sitewide.navigation.nav.pastWork.en }}" data-hu="{{ sitewide.navigation.nav.pastWork.hu }}">{{ sitewide.navigation.nav.pastWork.hu }}</a></li>
+        <li><a href="/about/" data-en="{{ sitewide.navigation.nav.about.en }}" data-hu="{{ sitewide.navigation.nav.about.hu }}">{{ sitewide.navigation.nav.about.hu }}</a></li>
+        <li><a href="/contact/" data-en="{{ sitewide.navigation.nav.contact.en }}" data-hu="{{ sitewide.navigation.nav.contact.hu }}">{{ sitewide.navigation.nav.contact.hu }}</a></li>
       </ul>
       <div class="nav-actions">
         <button class="lang-switcher" id="langSwitcher" aria-label="Switch language">
@@ -42,11 +42,11 @@
 
   <footer class="site-footer">
     <div class="footer-content">
-      <p>&copy; {{ currentYear }} Mácsai Pottery. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <p>&copy; {{ currentYear }} Mácsai Pottery. <span data-en="{{ sitewide.navigation.footer.rights.en }}" data-hu="{{ sitewide.navigation.footer.rights.hu }}">{{ sitewide.navigation.footer.rights.hu }}</span></p>
       <div class="footer-links">
-        <a href="/contact/" data-i18n="footer.contact">Contact</a>
-        <a href="/about/" data-i18n="footer.about">About</a>
-        <a href="https://instagram.com/macsai.pottery" target="_blank" rel="noopener" data-i18n="footer.instagram">Instagram</a>
+        <a href="/contact/" data-en="{{ sitewide.navigation.footer.contact.en }}" data-hu="{{ sitewide.navigation.footer.contact.hu }}">{{ sitewide.navigation.footer.contact.hu }}</a>
+        <a href="/about/" data-en="{{ sitewide.navigation.footer.about.en }}" data-hu="{{ sitewide.navigation.footer.about.hu }}">{{ sitewide.navigation.footer.about.hu }}</a>
+        <a href="https://instagram.com/macsai.pottery" target="_blank" rel="noopener" data-en="{{ sitewide.navigation.footer.instagram.en }}" data-hu="{{ sitewide.navigation.footer.instagram.hu }}">{{ sitewide.navigation.footer.instagram.hu }}</a>
       </div>
     </div>
   </footer>

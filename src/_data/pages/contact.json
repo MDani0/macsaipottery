@@ -1,0 +1,71 @@
+{
+  "email": "macsaipottery94@gmail.com",
+  "title": {
+    "en": "Get in Touch",
+    "hu": "Kapcsolatfelvétel"
+  },
+  "subtitle": {
+    "en": "Interested in a piece or have a question? Send us a message!",
+    "hu": "Érdekel egy darab, vagy kérdésed van? Küldj üzenetet!"
+  },
+  "form": {
+    "name": {
+      "en": "Name",
+      "hu": "Név"
+    },
+    "email": {
+      "en": "E-mail",
+      "hu": "E-mail"
+    },
+    "phone": {
+      "en": "Phone",
+      "hu": "Telefon"
+    },
+    "item": {
+      "en": "Interested in specific piece?",
+      "hu": "Érdekel egy konkrét darab?"
+    },
+    "message": {
+      "en": "Message",
+      "hu": "Üzenet"
+    },
+    "required": {
+      "en": "*",
+      "hu": "*"
+    },
+    "submit": {
+      "en": "Send Message",
+      "hu": "Üzenet Küldése"
+    }
+  },
+  "otherWays": {
+    "title": {
+      "en": "Other Ways to Connect",
+      "hu": "Egyéb kapcsolatfelvételi módok"
+    },
+    "emailLabel": {
+      "en": "Email",
+      "hu": "E-mail"
+    },
+    "responseTime": {
+      "label": {
+        "en": "Response Time",
+        "hu": "Válaszidő"
+      },
+      "text": {
+        "en": "We aim to respond within 24-48 hours.",
+        "hu": "Igyekszünk 24-48 órán belül válaszolni."
+      }
+    },
+    "studioVisits": {
+      "label": {
+        "en": "Studio Visits",
+        "hu": "Műhely Látogatás"
+      },
+      "text": {
+        "en": "By appointment only. Please inquire via the form.",
+        "hu": "Csak előzetes egyeztetéssel. Kérlek, érdeklődj az űrlapon keresztül."
+      }
+    }
+  }
+}

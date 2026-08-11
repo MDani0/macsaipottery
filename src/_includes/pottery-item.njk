@@ -26,9 +26,9 @@ layout: base.njk
         <h1 class="item-title" data-en="{{ title }}" data-hu="{{ title_hu or title }}">{{ title }}</h1>
 
         {% if status == "sold" %}
-          <span class="status-badge sold" data-i18n="pottery.sold">SOLD</span>
+          <span class="status-badge sold" data-en="{{ sitewide.pottery.badges.sold.en }}" data-hu="{{ sitewide.pottery.badges.sold.hu }}">{{ sitewide.pottery.badges.sold.hu }}</span>
         {% else %}
-          <span class="status-badge available" data-i18n="pottery.available">AVAILABLE</span>
+          <span class="status-badge available" data-en="{{ sitewide.pottery.badges.available.en }}" data-hu="{{ sitewide.pottery.badges.available.hu }}">{{ sitewide.pottery.badges.available.hu }}</span>
         {% endif %}
 
         <p class="category-tag">{{ category }}</p>
@@ -43,37 +43,37 @@ layout: base.njk
         </div>
 
         <div class="specifications">
-          <h3 data-i18n="pottery.specifications">Specifications</h3>
+          <h3 data-en="{{ sitewide.pottery.specifications.en }}" data-hu="{{ sitewide.pottery.specifications.hu }}">{{ sitewide.pottery.specifications.hu }}</h3>
           <ul>
             {% if height %}
-              <li><strong data-i18n="pottery.height">Height:</strong> {{ height }} cm ({{ height | toInches }}")</li>
+              <li><strong data-en="{{ sitewide.pottery.fields.height.en }}" data-hu="{{ sitewide.pottery.fields.height.hu }}">{{ sitewide.pottery.fields.height.hu }}:</strong> {{ height }} cm ({{ height | toInches }}")</li>
             {% endif %}
             {% if diameter %}
-              <li><strong data-i18n="pottery.diameter">Diameter:</strong> {{ diameter }} cm ({{ diameter | toInches }}")</li>
+              <li><strong data-en="{{ sitewide.pottery.fields.diameter.en }}" data-hu="{{ sitewide.pottery.fields.diameter.hu }}">{{ sitewide.pottery.fields.diameter.hu }}:</strong> {{ diameter }} cm ({{ diameter | toInches }}")</li>
             {% endif %}
             {% if width %}
-              <li><strong data-i18n="pottery.width">Width:</strong> {{ width }} cm ({{ width | toInches }}")</li>
+              <li><strong data-en="{{ sitewide.pottery.fields.width.en }}" data-hu="{{ sitewide.pottery.fields.width.hu }}">{{ sitewide.pottery.fields.width.hu }}:</strong> {{ width }} cm ({{ width | toInches }}")</li>
             {% endif %}
             {% if materials %}
-              <li><strong data-i18n="pottery.materials">Materials:</strong> <span class="item-materials" data-en="{{ materials }}" data-hu="{{ materials_hu or materials }}">{{ materials }}</span></li>
+              <li><strong data-en="{{ sitewide.pottery.fields.materials.en }}" data-hu="{{ sitewide.pottery.fields.materials.hu }}">{{ sitewide.pottery.fields.materials.hu }}:</strong> <span class="item-materials" data-en="{{ materials }}" data-hu="{{ materials_hu or materials }}">{{ materials }}</span></li>
             {% endif %}
             {% if technique %}
-              <li><strong data-i18n="pottery.technique">Technique:</strong> <span class="item-technique" data-en="{{ technique }}" data-hu="{{ technique_hu or technique }}">{{ technique }}</span></li>
+              <li><strong data-en="{{ sitewide.pottery.fields.technique.en }}" data-hu="{{ sitewide.pottery.fields.technique.hu }}">{{ sitewide.pottery.fields.technique.hu }}:</strong> <span class="item-technique" data-en="{{ technique }}" data-hu="{{ technique_hu or technique }}">{{ technique }}</span></li>
             {% endif %}
             {% if year %}
-              <li><strong data-i18n="pottery.year">Year:</strong> {{ year }}</li>
+              <li><strong data-en="{{ sitewide.pottery.fields.year.en }}" data-hu="{{ sitewide.pottery.fields.year.hu }}">{{ sitewide.pottery.fields.year.hu }}:</strong> {{ year }}</li>
             {% endif %}
           </ul>
         </div>
 
         {% if status == "available" %}
-          <a href="/contact/?item={{ title | urlencode }}" class="btn btn-primary btn-large" data-i18n="pottery.inquire">Inquire About This Piece</a>
+          <a href="/contact/?item={{ title | urlencode }}" class="btn btn-primary btn-large" data-en="{{ sitewide.pottery.inquire.en }}" data-hu="{{ sitewide.pottery.inquire.hu }}">{{ sitewide.pottery.inquire.hu }}</a>
         {% else %}
-          <p class="sold-notice" data-i18n="pottery.soldNotice">This piece has been sold and is no longer available.</p>
+          <p class="sold-notice" data-en="{{ sitewide.pottery.soldNotice.en }}" data-hu="{{ sitewide.pottery.soldNotice.hu }}">{{ sitewide.pottery.soldNotice.hu }}</p>
         {% endif %}
 
         <div class="navigation-links">
-          <a href="/available/" class="back-link" data-i18n="pottery.backToGallery">← Back to Gallery</a>
+          <a href="/available/" class="back-link" data-en="{{ sitewide.pottery.backToGallery.en }}" data-hu="{{ sitewide.pottery.backToGallery.hu }}">{{ sitewide.pottery.backToGallery.hu }}</a>
         </div>
       </div>
     </div>

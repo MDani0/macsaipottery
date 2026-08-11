@@ -1,0 +1,54 @@
+{
+  "badges": {
+    "available": {
+      "en": "Available",
+      "hu": "Elérhető"
+    },
+    "sold": {
+      "en": "SOLD",
+      "hu": "ELADVA"
+    }
+  },
+  "specifications": {
+    "en": "Specifications",
+    "hu": "Specifikációk"
+  },
+  "fields": {
+    "height": {
+      "en": "Height",
+      "hu": "Magasság"
+    },
+    "width": {
+      "en": "Width",
+      "hu": "Szélesség"
+    },
+    "diameter": {
+      "en": "Diameter",
+      "hu": "Átmérő"
+    },
+    "materials": {
+      "en": "Materials",
+      "hu": "Anyagok"
+    },
+    "technique": {
+      "en": "Technique",
+      "hu": "Technika"
+    },
+    "year": {
+      "en": "Year",
+      "hu": "Év"
+    }
+  },
+  "inquire": {
+    "en": "Inquire About This Piece",
+    "hu": "Érdeklődés erről a darabról"
+  },
+  "soldNotice": {
+    "en": "This piece has been sold and is no longer available.",
+    "hu": "Ez a darab már eladásra került és nem elérhető többé."
+  },
+  "backToGallery": {
+    "en": "← Back to Gallery",
+    "hu": "← Vissza a Galériához"
+  }
+}

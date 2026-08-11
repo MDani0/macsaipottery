@@ -4,36 +4,30 @@ layout: base.njk
 
 <section class="page-header">
   <div class="container">
-    <h1 data-i18n="about.title">{{ title }}</h1>
+    <h1 data-en="{{ pages.about.title.en }}" data-hu="{{ pages.about.title.hu }}">{{ pages.about.title.hu }}</h1>
   </div>
 </section>
 
 <section class="page-content">
   <div class="container">
     <div class="content-wrapper">
-      {% if artist_photo %}
-        <div class="artist-section">
-          <img src="{{ artist_photo }}" alt="{{ artist_name }}" class="artist-photo">
-          {% if artist_name %}
-            <h2>{{ artist_name }}</h2>
-          {% endif %}
-          {% if location %}
-            <p class="location">📍 {{ location }}</p>
-          {% endif %}
-        </div>
-      {% endif %}
+      <div class="artist-section">
+        <img src="{{ pages.about.artistPhoto }}" alt="{{ pages.about.artistName.hu }}" class="artist-photo">
+        <h2 data-en="{{ pages.about.artistName.en }}" data-hu="{{ pages.about.artistName.hu }}">{{ pages.about.artistName.hu }}</h2>
+        <p class="location" data-en="📍 {{ pages.about.location.en }}" data-hu="📍 {{ pages.about.location.hu }}">📍 {{ pages.about.location.hu }}</p>
+      </div>
       <div class="text-content">
-        <h2 data-i18n="about.artistTitle">The Artist</h2>
-        <p data-i18n="about.artistText">László Mácsai creates unique pottery pieces ranging from bonsai pots to functional kitchenwares and decorative ceramics. Each piece is handcrafted with careful attention to traditional firing techniques and glaze applications.</p>
+        <h2 data-en="{{ pages.about.artist.title.en }}" data-hu="{{ pages.about.artist.title.hu }}">{{ pages.about.artist.title.hu }}</h2>
+        <p data-en="{{ pages.about.artist.text.en }}" data-hu="{{ pages.about.artist.text.hu }}">{{ pages.about.artist.text.hu }}</p>
 
-        <h2 data-i18n="about.processTitle">The Process</h2>
-        <p data-i18n="about.processText">Every piece begins with carefully selected clay, shaped on the pottery wheel or hand-built depending on the design. The work is fired using various techniques including wood-salt firing at cone 10 and gas reduction firing at cone 8, creating unique surface effects and color variations.</p>
+        <h2 data-en="{{ pages.about.process.title.en }}" data-hu="{{ pages.about.process.title.hu }}">{{ pages.about.process.title.hu }}</h2>
+        <p data-en="{{ pages.about.process.text.en }}" data-hu="{{ pages.about.process.text.hu }}">{{ pages.about.process.text.hu }}</p>
 
-        <h2 data-i18n="about.techniquesTitle">Materials & Techniques</h2>
-        <p data-i18n="about.techniquesText">Working primarily with stoneware and specialized glazes like shino, László explores the unpredictable beauty of high-temperature firing. The interplay between thick glaze application, firing atmosphere, and kiln placement creates one-of-a-kind surfaces - from crawling patterns in shino to carbon spots and pinkish flashing from reduction atmospheres.</p>
+        <h2 data-en="{{ pages.about.techniques.title.en }}" data-hu="{{ pages.about.techniques.title.hu }}">{{ pages.about.techniques.title.hu }}</h2>
+        <p data-en="{{ pages.about.techniques.text.en }}" data-hu="{{ pages.about.techniques.text.hu }}">{{ pages.about.techniques.text.hu }}</p>
 
-        <h2 data-i18n="about.studioTitle">Studio</h2>
-        <p data-i18n-html="about.studioText">Based in Hungary, the studio focuses on creating functional and decorative ceramics that celebrate the natural variations inherent in the ceramic process. Follow the work on Instagram: <a href="https://instagram.com/macsai.pottery" target="_blank" rel="noopener noreferrer">@macsai.pottery</a> and <a href="https://instagram.com/macsai.laca" target="_blank" rel="noopener noreferrer">@macsai.laca</a></p>
+        <h2 data-en="{{ pages.about.studio.title.en }}" data-hu="{{ pages.about.studio.title.hu }}">{{ pages.about.studio.title.hu }}</h2>
+        <p data-en="{{ pages.about.studio.text.en }}" data-hu="{{ pages.about.studio.text.hu | safe }}">{{ pages.about.studio.text.hu | safe }}</p>
       </div>
     </div>
   </div>

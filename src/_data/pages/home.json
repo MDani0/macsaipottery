@@ -1,0 +1,23 @@
+{
+  "heroImage": "/images/uploads/index.png",
+  "heroTitle": {
+    "en": "Mácsai Pottery",
+    "hu": "Mácsai Kerámia"
+  },
+  "heroSubtitle": {
+    "en": "Bonsai pots, kitchenwares, and decorative ceramics from Hungary",
+    "hu": "Bonsai edények, konyhai eszközök és dekoratív kerámiák Magyarországról"
+  },
+  "intro": {
+    "en": "Welcome to the studio of László Mácsai, where each piece is thoughtfully crafted by hand using traditional firing techniques. Every item is unique, showcasing the unpredictable beauty of wood-salt and reduction firing.\n\nFrom functional kitchenwares to specialized bonsai pots and decorative pieces, each work celebrates the natural variations that make handmade ceramics truly one-of-a-kind.",
+    "hu": "Üdvözöllek Mácsai László műhelyében, ahol minden darab kézzel, hagyományos égetési technikákkal készül. Minden alkotás egyedi, bemutatva a fa-só és redukciós égetés kiszámíthatatlan szépségét.\n\nA funkcionális konyhai eszközöktől a speciális bonsai edényeken át a dekoratív darabokig minden munka a kézműves kerámiákat valóban egyedivé tevő természetes változatosságot ünnepli."
+  },
+  "featuredTitle": {
+    "en": "Featured Pieces",
+    "hu": "Kiemelt Darabok"
+  },
+  "viewAll": {
+    "en": "See All Available Pieces",
+    "hu": "Összes elérhető darab megtekintése"
+  }
+}

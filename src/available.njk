@@ -6,22 +6,22 @@ permalink: /available/
 
 <section class="gallery-header">
   <div class="container">
-    <h1 data-i18n="gallery.availableTitle">Available Pieces</h1>
-    <p class="subtitle" data-i18n="gallery.availableSubtitle">Unique, handcrafted pottery pieces available for purchase</p>
+    <h1 data-en="{{ pages.available.title.en }}" data-hu="{{ pages.available.title.hu }}">{{ pages.available.title.hu }}</h1>
+    <p class="subtitle" data-en="{{ pages.available.subtitle.en }}" data-hu="{{ pages.available.subtitle.hu }}">{{ pages.available.subtitle.hu }}</p>
   </div>
 </section>
 
 <section class="gallery-filters">
   <div class="container">
     <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all" data-i18n="gallery.filterAll">All</button>
-      <button class="filter-btn" data-filter="Bowl" data-i18n="gallery.filterBowls">Bowls</button>
-      <button class="filter-btn" data-filter="Vase" data-i18n="gallery.filterVases">Vases</button>
-      <button class="filter-btn" data-filter="Mug" data-i18n="gallery.filterMugs">Mugs</button>
-      <button class="filter-btn" data-filter="Plate" data-i18n="gallery.filterPlates">Plates</button>
-      <button class="filter-btn" data-filter="Sculpture" data-i18n="gallery.filterSculptures">Sculptures</button>
-      <button class="filter-btn" data-filter="Bonsai Pot" data-i18n="gallery.filterBonsaiPots">Bonsai Pots</button>
-      <button class="filter-btn" data-filter="Other" data-i18n="gallery.filterOther">Other</button>
+      <button class="filter-btn active" data-filter="all" data-en="{{ sitewide.gallery.filters.all.en }}" data-hu="{{ sitewide.gallery.filters.all.hu }}">{{ sitewide.gallery.filters.all.hu }}</button>
+      <button class="filter-btn" data-filter="Bowl" data-en="{{ sitewide.gallery.filters.bowls.en }}" data-hu="{{ sitewide.gallery.filters.bowls.hu }}">{{ sitewide.gallery.filters.bowls.hu }}</button>
+      <button class="filter-btn" data-filter="Vase" data-en="{{ sitewide.gallery.filters.vases.en }}" data-hu="{{ sitewide.gallery.filters.vases.hu }}">{{ sitewide.gallery.filters.vases.hu }}</button>
+      <button class="filter-btn" data-filter="Mug" data-en="{{ sitewide.gallery.filters.mugs.en }}" data-hu="{{ sitewide.gallery.filters.mugs.hu }}">{{ sitewide.gallery.filters.mugs.hu }}</button>
+      <button class="filter-btn" data-filter="Plate" data-en="{{ sitewide.gallery.filters.plates.en }}" data-hu="{{ sitewide.gallery.filters.plates.hu }}">{{ sitewide.gallery.filters.plates.hu }}</button>
+      <button class="filter-btn" data-filter="Sculpture" data-en="{{ sitewide.gallery.filters.sculptures.en }}" data-hu="{{ sitewide.gallery.filters.sculptures.hu }}">{{ sitewide.gallery.filters.sculptures.hu }}</button>
+      <button class="filter-btn" data-filter="Bonsai Pot" data-en="{{ sitewide.gallery.filters.bonsaiPots.en }}" data-hu="{{ sitewide.gallery.filters.bonsaiPots.hu }}">{{ sitewide.gallery.filters.bonsaiPots.hu }}</button>
+      <button class="filter-btn" data-filter="Other" data-en="{{ sitewide.gallery.filters.other.en }}" data-hu="{{ sitewide.gallery.filters.other.hu }}">{{ sitewide.gallery.filters.other.hu }}</button>
     </div>
   </div>
 </section>
@@ -40,7 +40,7 @@ permalink: /available/
                 {% else %}
                   <div class="pottery-image-placeholder"></div>
                 {% endif %}
-                <span class="status-overlay available" data-i18n="pottery.available">Available</span>
+                <span class="status-overlay available" data-en="{{ sitewide.pottery.badges.available.en }}" data-hu="{{ sitewide.pottery.badges.available.hu }}">{{ sitewide.pottery.badges.available.hu }}</span>
               </div>
               <div class="pottery-info">
                 <h3 class="pottery-title" data-en="{{ item.data.title }}" data-hu="{{ item.data.title_hu or item.data.title }}">{{ item.data.title }}</h3>
@@ -54,7 +54,7 @@ permalink: /available/
       </div>
     {% else %}
       <div class="empty-state">
-        <p data-i18n="gallery.emptyAvailable">No pieces are currently available. Please check back soon or <a href="/contact/">contact us</a> for upcoming pieces.</p>
+        <p data-en="{{ sitewide.gallery.emptyStates.available.en }}" data-hu="{{ sitewide.gallery.emptyStates.available.hu }}">{{ sitewide.gallery.emptyStates.available.hu }}</p>
       </div>
     {% endif %}
   </div>
