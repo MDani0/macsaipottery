@@ -9,6 +9,7 @@ media_folder: "src/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
+  # Pottery Items - unchanged, works well
   - name: "pottery"
     label: "Pottery Items"
     folder: "src/pottery"
@@ -34,245 +35,505 @@ collections:
       - {label: "Year Created", name: "year", widget: "number", required: false}
       - {label: "Featured", name: "featured", widget: "boolean", default: false, required: false}
 
+  # Pages - content + translations in one place
   - name: "pages"
     label: "Pages"
     files:
-      - label: "About Page"
-        name: "about"
-        file: "src/about.md"
-        fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Layout", name: "layout", widget: "hidden", default: "page.njk"}
-          - {label: "Artist Name", name: "artist_name", widget: "string"}
-          - {label: "Artist Photo", name: "artist_photo", widget: "image"}
-          - {label: "Bio", name: "body", widget: "markdown"}
-          - {label: "Studio Location", name: "location", widget: "string", required: false}
-
       - label: "Home Page"
         name: "home"
-        file: "src/index.md"
+        file: "src/_data/pages/home.json"
         fields:
-          - {label: "Title", name: "title", widget: "string"}
-          - {label: "Layout", name: "layout", widget: "hidden", default: "home.njk"}
-          - {label: "Hero Image", name: "hero_image", widget: "image"}
-          - {label: "Hero Title", name: "hero_title", widget: "string"}
-          - {label: "Hero Subtitle", name: "hero_subtitle", widget: "text"}
-          - {label: "Intro Text", name: "body", widget: "markdown"}
+          - {label: "Hero Image", name: "heroImage", widget: "image"}
+          - label: "Hero Title"
+            name: "heroTitle"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Hero Subtitle"
+            name: "heroSubtitle"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Intro Text"
+            name: "intro"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "markdown"}
+              - {label: "Hungarian", name: "hu", widget: "markdown"}
+          - label: "Featured Section Title"
+            name: "featuredTitle"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "View All Button"
+            name: "viewAll"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+
+      - label: "About Page"
+        name: "about"
+        file: "src/_data/pages/about.json"
+        fields:
+          - {label: "Artist Photo", name: "artistPhoto", widget: "image"}
+          - label: "Artist Name"
+            name: "artistName"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Studio Location"
+            name: "location"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Page Title"
+            name: "title"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Artist Section"
+            name: "artist"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Text"
+                name: "text"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "text"}
+                  - {label: "Hungarian", name: "hu", widget: "text"}
+          - label: "Process Section"
+            name: "process"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Text"
+                name: "text"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "text"}
+                  - {label: "Hungarian", name: "hu", widget: "text"}
+          - label: "Techniques Section"
+            name: "techniques"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Text"
+                name: "text"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "text"}
+                  - {label: "Hungarian", name: "hu", widget: "text"}
+          - label: "Studio Section"
+            name: "studio"
+            widget: "object"
+            fields:
+              - label: "Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Text (with HTML for links)"
+                name: "text"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "text"}
+                  - {label: "Hungarian", name: "hu", widget: "text"}
 
       - label: "Contact Page"
         name: "contact"
-        file: "src/_data/contact.json"
+        file: "src/_data/pages/contact.json"
         fields:
           - {label: "Email Address", name: "email", widget: "string"}
-          - {label: "Response Time (hours)", name: "response_time_hours", widget: "string", hint: "e.g., 24-48"}
-          - {label: "Show Studio Visits Section", name: "studio_visits_available", widget: "boolean", default: true}
+          - label: "Page Title"
+            name: "title"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Page Subtitle"
+            name: "subtitle"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Form Labels"
+            name: "form"
+            widget: "object"
+            fields:
+              - label: "Name"
+                name: "name"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Email"
+                name: "email"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Phone"
+                name: "phone"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Item"
+                name: "item"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Message"
+                name: "message"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Required"
+                name: "required"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Submit Button"
+                name: "submit"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Other Ways Section"
+            name: "otherWays"
+            widget: "object"
+            fields:
+              - label: "Section Title"
+                name: "title"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Email Label"
+                name: "emailLabel"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Response Time"
+                name: "responseTime"
+                widget: "object"
+                fields:
+                  - label: "Label"
+                    name: "label"
+                    widget: "object"
+                    fields:
+                      - {label: "English", name: "en", widget: "string"}
+                      - {label: "Hungarian", name: "hu", widget: "string"}
+                  - label: "Text"
+                    name: "text"
+                    widget: "object"
+                    fields:
+                      - {label: "English", name: "en", widget: "text"}
+                      - {label: "Hungarian", name: "hu", widget: "text"}
+              - label: "Studio Visits"
+                name: "studioVisits"
+                widget: "object"
+                fields:
+                  - label: "Label"
+                    name: "label"
+                    widget: "object"
+                    fields:
+                      - {label: "English", name: "en", widget: "string"}
+                      - {label: "Hungarian", name: "hu", widget: "string"}
+                  - label: "Text"
+                    name: "text"
+                    widget: "object"
+                    fields:
+                      - {label: "English", name: "en", widget: "text"}
+                      - {label: "Hungarian", name: "hu", widget: "text"}
 
-  - name: "translations"
-    label: "UI Translations"
-    files:
-      - label: "Translations"
-        name: "translations"
-        file: "src/_data/translations.json"
+      - label: "Available Page"
+        name: "available"
+        file: "src/_data/pages/available.json"
         fields:
-          - label: "English Translations"
-            name: "en"
+          - label: "Title"
+            name: "title"
             widget: "object"
             fields:
-              - label: "Navigation"
-                name: "nav"
-                widget: "object"
-                fields:
-                  - {label: "Home", name: "home", widget: "string"}
-                  - {label: "Available", name: "available", widget: "string"}
-                  - {label: "Past Work", name: "pastWork", widget: "string"}
-                  - {label: "About", name: "about", widget: "string"}
-                  - {label: "Contact", name: "contact", widget: "string"}
-              - label: "Gallery Filters"
-                name: "gallery"
-                widget: "object"
-                fields:
-                  - {label: "All", name: "filterAll", widget: "string"}
-                  - {label: "Bowls", name: "filterBowls", widget: "string"}
-                  - {label: "Vases", name: "filterVases", widget: "string"}
-                  - {label: "Mugs", name: "filterMugs", widget: "string"}
-                  - {label: "Plates", name: "filterPlates", widget: "string"}
-                  - {label: "Sculptures", name: "filterSculptures", widget: "string"}
-                  - {label: "Bonsai Pots", name: "filterBonsaiPots", widget: "string"}
-                  - {label: "Other", name: "filterOther", widget: "string"}
-              - label: "Footer"
-                name: "footer"
-                widget: "object"
-                fields:
-                  - {label: "Rights", name: "rights", widget: "string"}
-                  - {label: "Contact", name: "contact", widget: "string"}
-                  - {label: "About", name: "about", widget: "string"}
-                  - {label: "Instagram", name: "instagram", widget: "string"}
-              - label: "Home Page"
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+
+      - label: "Past Work Page"
+        name: "pastWork"
+        file: "src/_data/pages/pastWork.json"
+        fields:
+          - label: "Title"
+            name: "title"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Subtitle"
+            name: "subtitle"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+
+  # Site-Wide - navigation, filters, labels
+  - name: "sitewide"
+    label: "Site-Wide"
+    files:
+      - label: "Navigation & Footer"
+        name: "navigation"
+        file: "src/_data/sitewide/navigation.json"
+        fields:
+          - label: "Navigation Links"
+            name: "nav"
+            widget: "object"
+            fields:
+              - label: "Home"
                 name: "home"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Featured Title", name: "featuredTitle", widget: "string"}
-                  - {label: "View Details", name: "viewDetails", widget: "string"}
-                  - {label: "View All", name: "viewAll", widget: "string"}
-              - label: "About Page"
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Available"
+                name: "available"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Past Work"
+                name: "pastWork"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "About"
                 name: "about"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Artist Title", name: "artistTitle", widget: "string"}
-                  - {label: "Artist Text", name: "artistText", widget: "text"}
-                  - {label: "Process Title", name: "processTitle", widget: "string"}
-                  - {label: "Process Text", name: "processText", widget: "text"}
-                  - {label: "Techniques Title", name: "techniquesTitle", widget: "string"}
-                  - {label: "Techniques Text", name: "techniquesText", widget: "text"}
-                  - {label: "Studio Title", name: "studioTitle", widget: "string"}
-                  - {label: "Studio Text (with HTML)", name: "studioText", widget: "text"}
-              - label: "Contact Page"
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Contact"
                 name: "contact"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Subtitle", name: "subtitle", widget: "string"}
-                  - {label: "Name", name: "name", widget: "string"}
-                  - {label: "Email", name: "email", widget: "string"}
-                  - {label: "Phone", name: "phone", widget: "string"}
-                  - {label: "Item", name: "item", widget: "string"}
-                  - {label: "Message", name: "message", widget: "string"}
-                  - {label: "Required", name: "required", widget: "string"}
-                  - {label: "Submit", name: "submit", widget: "string"}
-                  - {label: "Other Ways", name: "otherWays", widget: "string"}
-                  - {label: "Email Label", name: "emailLabel", widget: "string"}
-                  - {label: "Response Time", name: "responseTime", widget: "string"}
-                  - {label: "Response Text", name: "responseText", widget: "string"}
-                  - {label: "Studio Visits", name: "studioVisits", widget: "string"}
-                  - {label: "Studio Visits Text", name: "studioVisitsText", widget: "string"}
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Footer"
+            name: "footer"
+            widget: "object"
+            fields:
+              - label: "Rights"
+                name: "rights"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Contact"
+                name: "contact"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "About"
+                name: "about"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Instagram"
+                name: "instagram"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+
+      - label: "Gallery & Filters"
+        name: "gallery"
+        file: "src/_data/sitewide/gallery.json"
+        fields:
+          - label: "Filter Labels"
+            name: "filters"
+            widget: "object"
+            fields:
+              - label: "All"
+                name: "all"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Bowls"
+                name: "bowls"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Vases"
+                name: "vases"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Mugs"
+                name: "mugs"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Plates"
+                name: "plates"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Sculptures"
+                name: "sculptures"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Bonsai Pots"
+                name: "bonsaiPots"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Other"
+                name: "other"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Empty State Messages"
+            name: "emptyStates"
+            widget: "object"
+            fields:
               - label: "Available Page"
                 name: "available"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Subtitle", name: "subtitle", widget: "string"}
+                  - {label: "English", name: "en", widget: "text"}
+                  - {label: "Hungarian", name: "hu", widget: "text"}
               - label: "Past Work Page"
                 name: "pastWork"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Subtitle", name: "subtitle", widget: "string"}
-              - label: "Pottery Details"
-                name: "pottery"
-                widget: "object"
-                fields:
-                  - {label: "Available Badge", name: "available", widget: "string"}
-                  - {label: "Sold Badge", name: "sold", widget: "string"}
-                  - {label: "Specifications", name: "specifications", widget: "string"}
-                  - {label: "Height", name: "height", widget: "string"}
-                  - {label: "Width", name: "width", widget: "string"}
-                  - {label: "Diameter", name: "diameter", widget: "string"}
-                  - {label: "Materials", name: "materials", widget: "string"}
-                  - {label: "Technique", name: "technique", widget: "string"}
-                  - {label: "Year", name: "year", widget: "string"}
-                  - {label: "Inquire Button", name: "inquire", widget: "string"}
-                  - {label: "Sold Notice", name: "soldNotice", widget: "string"}
-                  - {label: "Back to Gallery", name: "backToGallery", widget: "string"}
-          - label: "Hungarian Translations"
-            name: "hu"
+                  - {label: "English", name: "en", widget: "text"}
+                  - {label: "Hungarian", name: "hu", widget: "text"}
+
+      - label: "Pottery Item Labels"
+        name: "pottery"
+        file: "src/_data/sitewide/pottery.json"
+        fields:
+          - label: "Status Badges"
+            name: "badges"
             widget: "object"
             fields:
-              - label: "Navigation"
-                name: "nav"
-                widget: "object"
-                fields:
-                  - {label: "Home", name: "home", widget: "string"}
-                  - {label: "Available", name: "available", widget: "string"}
-                  - {label: "Past Work", name: "pastWork", widget: "string"}
-                  - {label: "About", name: "about", widget: "string"}
-                  - {label: "Contact", name: "contact", widget: "string"}
-              - label: "Gallery Filters"
-                name: "gallery"
-                widget: "object"
-                fields:
-                  - {label: "All", name: "filterAll", widget: "string"}
-                  - {label: "Bowls", name: "filterBowls", widget: "string"}
-                  - {label: "Vases", name: "filterVases", widget: "string"}
-                  - {label: "Mugs", name: "filterMugs", widget: "string"}
-                  - {label: "Plates", name: "filterPlates", widget: "string"}
-                  - {label: "Sculptures", name: "filterSculptures", widget: "string"}
-                  - {label: "Bonsai Pots", name: "filterBonsaiPots", widget: "string"}
-                  - {label: "Other", name: "filterOther", widget: "string"}
-              - label: "Footer"
-                name: "footer"
-                widget: "object"
-                fields:
-                  - {label: "Rights", name: "rights", widget: "string"}
-                  - {label: "Contact", name: "contact", widget: "string"}
-                  - {label: "About", name: "about", widget: "string"}
-                  - {label: "Instagram", name: "instagram", widget: "string"}
-              - label: "Home Page"
-                name: "home"
-                widget: "object"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Featured Title", name: "featuredTitle", widget: "string"}
-                  - {label: "View Details", name: "viewDetails", widget: "string"}
-                  - {label: "View All", name: "viewAll", widget: "string"}
-              - label: "About Page"
-                name: "about"
-                widget: "object"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Artist Title", name: "artistTitle", widget: "string"}
-                  - {label: "Artist Text", name: "artistText", widget: "text"}
-                  - {label: "Process Title", name: "processTitle", widget: "string"}
-                  - {label: "Process Text", name: "processText", widget: "text"}
-                  - {label: "Techniques Title", name: "techniquesTitle", widget: "string"}
-                  - {label: "Techniques Text", name: "techniquesText", widget: "text"}
-                  - {label: "Studio Title", name: "studioTitle", widget: "string"}
-                  - {label: "Studio Text (with HTML)", name: "studioText", widget: "text"}
-              - label: "Contact Page"
-                name: "contact"
-                widget: "object"
-                fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Subtitle", name: "subtitle", widget: "string"}
-                  - {label: "Name", name: "name", widget: "string"}
-                  - {label: "Email", name: "email", widget: "string"}
-                  - {label: "Phone", name: "phone", widget: "string"}
-                  - {label: "Item", name: "item", widget: "string"}
-                  - {label: "Message", name: "message", widget: "string"}
-                  - {label: "Required", name: "required", widget: "string"}
-                  - {label: "Submit", name: "submit", widget: "string"}
-                  - {label: "Other Ways", name: "otherWays", widget: "string"}
-                  - {label: "Email Label", name: "emailLabel", widget: "string"}
-                  - {label: "Response Time", name: "responseTime", widget: "string"}
-                  - {label: "Response Text", name: "responseText", widget: "string"}
-                  - {label: "Studio Visits", name: "studioVisits", widget: "string"}
-                  - {label: "Studio Visits Text", name: "studioVisitsText", widget: "string"}
-              - label: "Available Page"
+              - label: "Available"
                 name: "available"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Subtitle", name: "subtitle", widget: "string"}
-              - label: "Past Work Page"
-                name: "pastWork"
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Sold"
+                name: "sold"
                 widget: "object"
                 fields:
-                  - {label: "Title", name: "title", widget: "string"}
-                  - {label: "Subtitle", name: "subtitle", widget: "string"}
-              - label: "Pottery Details"
-                name: "pottery"
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Specifications Title"
+            name: "specifications"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Field Labels"
+            name: "fields"
+            widget: "object"
+            fields:
+              - label: "Height"
+                name: "height"
                 widget: "object"
                 fields:
-                  - {label: "Available Badge", name: "available", widget: "string"}
-                  - {label: "Sold Badge", name: "sold", widget: "string"}
-                  - {label: "Specifications", name: "specifications", widget: "string"}
-                  - {label: "Height", name: "height", widget: "string"}
-                  - {label: "Width", name: "width", widget: "string"}
-                  - {label: "Diameter", name: "diameter", widget: "string"}
-                  - {label: "Materials", name: "materials", widget: "string"}
-                  - {label: "Technique", name: "technique", widget: "string"}
-                  - {label: "Year", name: "year", widget: "string"}
-                  - {label: "Inquire Button", name: "inquire", widget: "string"}
-                  - {label: "Sold Notice", name: "soldNotice", widget: "string"}
-                  - {label: "Back to Gallery", name: "backToGallery", widget: "string"}
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Width"
+                name: "width"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Diameter"
+                name: "diameter"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Materials"
+                name: "materials"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Technique"
+                name: "technique"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+              - label: "Year"
+                name: "year"
+                widget: "object"
+                fields:
+                  - {label: "English", name: "en", widget: "string"}
+                  - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Inquire Button"
+            name: "inquire"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
+          - label: "Sold Notice"
+            name: "soldNotice"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "text"}
+              - {label: "Hungarian", name: "hu", widget: "text"}
+          - label: "Back to Gallery Link"
+            name: "backToGallery"
+            widget: "object"
+            fields:
+              - {label: "English", name: "en", widget: "string"}
+              - {label: "Hungarian", name: "hu", widget: "string"}
