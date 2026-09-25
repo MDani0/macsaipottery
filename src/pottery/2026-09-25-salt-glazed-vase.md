@@ -1,5 +1,5 @@
 ---
-title: Salt glazed vase
+title: Salt-glazed vase
 title_hu: Sómázas váza
 images:
   - /images/uploads/45-2-.jpg
