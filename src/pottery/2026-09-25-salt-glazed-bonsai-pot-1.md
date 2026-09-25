@@ -1,6 +1,6 @@
 ---
 title: Salt-glazed bonsai pot
-title_hu: Sómázas bonsai pot
+title_hu: Sómázas bonsai tál
 images:
   - /images/uploads/19-3-.jpg
   - /images/uploads/19-2-.jpg
