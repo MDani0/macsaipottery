@@ -1,6 +1,6 @@
 ---
-title: Lidded ceramic jar
-title_hu: Fedeles tárolóedény
+title: Salt-glazed lidded ceramic jar
+title_hu: Sómázas fedeles tárolóedény
 images:
   - /images/uploads/35-2-.jpg
   - /images/uploads/35-4-.jpg
