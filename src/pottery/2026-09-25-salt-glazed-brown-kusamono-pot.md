@@ -3,7 +3,7 @@ title: Salt-glazed brown kusamono pot
 title_hu: Sómázas barna kusamono tál
 images:
   - /images/uploads/6.jpg
-price: 15
+price: 15000
 price_eur: 41
 status: sold
 category: Bonsai Pot
