@@ -16,5 +16,5 @@ technique_hu: "Korongozott/kézzel formált "
 description: "Woodfired salt-shino glazed bottle formed vase. "
 description_hu: "Fatüzelésű kemencében égetett só- és shino mázas palackformájú váza. "
 year: ""
-featured: false
+featured: true
 ---
