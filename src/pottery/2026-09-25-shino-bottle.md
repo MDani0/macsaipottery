@@ -1,5 +1,5 @@
 ---
-title: "Shino bottle "
+title: "Shino square bottle "
 title_hu: Shino palack
 images:
   - /images/uploads/5-1-.jpg
@@ -11,8 +11,8 @@ status: sold
 category: Vase
 materials: stoneware, shino glaze
 materials_hu: kőcserép, shino máz
-technique: Wheel-thrown/hand-built
-technique_hu: "Korongozott/kézzel formált "
+technique: wheel-thrown/hand-built
+technique_hu: "korongozott/kézzel formált "
 description: "Woodfired salt-shino glazed bottle formed vase. "
 description_hu: "Fatüzelésű kemencében égetett só- és shino mázas palackformájú váza. "
 year: ""
